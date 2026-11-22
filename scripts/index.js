@@ -64,5 +64,20 @@ text.addEventListener("input", function() {
 });
 
 
+function updateTime() {
+    time--;
+    timeEl.textContent = time;
+
+if (time <= 0) {
+    clearInterval(timer);
+    gameOver();
+}
+}
+const timer = setInterval(updateTime, 1000);
+
+function gameOver() {
+    endgameEl.style.display = "flex";
+}
+
 
 addWordToDOM();
